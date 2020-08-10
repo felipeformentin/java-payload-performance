@@ -1,0 +1,75 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package br.com.felipe.payloadperformanceserver.grpc;
+
+message Empty {
+
+}
+
+message UserResponse {
+  repeated User user = 1;
+}
+
+message User {
+  string age = 1;
+  string longAttributeName1 = 2;
+  string longAttributeName2 = 3;
+  string longAttributeName3 = 4;
+  string longAttributeName4 = 5;
+  string longAttributeName5 = 6;
+  string longAttributeName6 = 7;
+  string longAttributeName7 = 8;
+  string longAttributeName8 = 9;
+  string longAttributeName9 = 10;
+  string longAttributeName10 = 11;
+  string longAttributeName11 = 12;
+  string longAttributeName12 = 13;
+  string longAttributeName13 = 14;
+  string longAttributeName14 = 15;
+  string longAttributeName15 = 16;
+  string longAttributeName16 = 17;
+  string longAttributeName17 = 18;
+  string longAttributeName18 = 19;
+  string longAttributeName19 = 20;
+  string longAttributeName20 = 21;
+  string longAttributeName21 = 22;
+  string longAttributeName22 = 23;
+  string longAttributeName23 = 24;
+  string longAttributeName24 = 25;
+  string longAttributeName25 = 26;
+  string longAttributeName26 = 27;
+  string longAttributeName27 = 28;
+  string longAttributeName28 = 29;
+  string longAttributeName29 = 30;
+  string longAttributeName30 = 31;
+  string longAttributeName31 = 32;
+  string longAttributeName32 = 33;
+  string longAttributeName33 = 34;
+  string longAttributeName34 = 35;
+  string longAttributeName35 = 36;
+  string longAttributeName36 = 37;
+  string longAttributeName37 = 38;
+  string longAttributeName38 = 39;
+  string longAttributeName39 = 40;
+  string longAttributeName40 = 41;
+  string longAttributeName41 = 42;
+  string longAttributeName42 = 43;
+  string longAttributeName43 = 44;
+  string longAttributeName44 = 45;
+  string longAttributeName45 = 46;
+  string longAttributeName46 = 47;
+  string longAttributeName47 = 48;
+  string longAttributeName48 = 49;
+  string longAttributeName49 = 50;
+  string longAttributeName50 = 51;
+  string longAttributeName51 = 52;
+  string longAttributeName52 = 53;
+  string longAttributeName53 = 54;
+  string longAttributeName54 = 55;
+  string longAttributeName55 = 56;
+  string longAttributeName56 = 57;
+}
+
+service UserService {
+  rpc getUsers(Empty) returns (UserResponse);
+}
