@@ -2,6 +2,7 @@ package br.com.felipe.grpcperformanceclient;
 
 
 import br.com.felipe.payloadperformanceserver.grpc.Empty;
+import br.com.felipe.payloadperformanceserver.grpc.User;
 import br.com.felipe.payloadperformanceserver.grpc.UserResponse;
 import br.com.felipe.payloadperformanceserver.grpc.UserServiceGrpc;
 import io.grpc.Server;
@@ -9,6 +10,8 @@ import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class GrpcPerformanceServerApplication {
@@ -63,10 +66,19 @@ public class GrpcPerformanceServerApplication {
 
 	static class UserImpĺ extends UserServiceGrpc.UserServiceImplBase {
 
+		private final static UserResponse response;
+
+		static {
+			List<User> users = new ArrayList<>();
+			for (int i = 0; i < 100; i++) {
+				users.add(User.newBuilder().build());
+			}
+			response = UserResponse.newBuilder().addAllUser(users).build();
+		}
+
 		@Override
 		public void getUsers(Empty req, StreamObserver<UserResponse> responseObserver) {
-			UserResponse reply = UserResponse.newBuilder().build();
-			responseObserver.onNext(reply);
+			responseObserver.onNext(response);
 			responseObserver.onCompleted();
 		}
 	}
