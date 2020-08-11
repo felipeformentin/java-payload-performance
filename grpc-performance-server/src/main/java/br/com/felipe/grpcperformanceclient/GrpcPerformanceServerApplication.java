@@ -20,7 +20,7 @@ public class GrpcPerformanceServerApplication {
 
 	private void start() throws IOException {
 		/* The port on which the server should run */
-		int port = 50051;
+		int port = 8080;
 		server = ServerBuilder.forPort(port)
 				.addService(new UserImpĺ())
 				.build()
